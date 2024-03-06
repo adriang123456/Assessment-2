@@ -27,6 +27,9 @@ String::String(const String& other) {
 String::~String() {
 	delete holder;
 	holder = nullptr;
+
+	delete holder_1;
+	holder_1 = nullptr;
 }
 
 // length function
