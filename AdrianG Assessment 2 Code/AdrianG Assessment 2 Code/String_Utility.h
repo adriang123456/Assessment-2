@@ -45,4 +45,5 @@ private:	// variables
 	int Index;
 	unsigned int size = 0;
 	char* holder = nullptr;
+	char* holder_1 = nullptr;
 };

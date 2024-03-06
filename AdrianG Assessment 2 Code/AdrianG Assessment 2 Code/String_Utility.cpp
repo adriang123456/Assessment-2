@@ -87,6 +87,8 @@ void String::StrPreppend(const char* str)
 const char* String::CStr() const
 {
 	cout << holder;
+	cout << "\n\n\n\n";
+
 	return holder;
 }
 
@@ -161,7 +163,8 @@ size_t String::Find(const char* str) {
 		}
 	}
 	if (found != 1) { loc = -1; cout << loc; }
-
+	
+	cout << "\n\n\n\n";
 	return size_t(loc);
 }
 
@@ -206,7 +209,8 @@ size_t String::Find_I(int index, const char* str) {
 		}
 	}
 	if (found != 1) { loc = -1; cout << loc; }
-
+	
+	cout << "\n\n\n\n";
 	return size_t(loc);
 }
 
@@ -251,6 +255,7 @@ void String::Replace(const char* str, const char* replace) {
 	for (int i = 0; i < txt_file.size(); i++) {
 		cout << txt_file[i] << " ";
 	}
+	cout << "\n\n\n\n";
 }
 
 // This functions gets a users input and put it into holder -- ----- -- doesn't like spaces
@@ -259,14 +264,16 @@ void String::Read() {
 	cin >> user_input;
 
 	int size = user_input.size();
-	holder = new char[size + 1];
+	holder_1 = new char[size + 1];
 
-	strcpy_s(holder, size + 1, user_input.c_str());
+	strcpy_s(holder_1, size + 1, user_input.c_str());
+	cout << "\n\n\n\n";
 }
 
 // This functions prints the users input from the previous function
 void String::Write() {
-	cout << holder;
+	cout << holder_1;
+	cout << "\n\n\n\n";
 }
 
 // overloaded == operator
@@ -291,6 +298,7 @@ bool String::operator ==(const char* other)
 		}
 	}
 	cout << "False";
+	cout << "\n\n\n\n";
 	return false;
 }
 
@@ -300,7 +308,6 @@ char& String::operator[](size_t index)
 	if (index >= strlen(holder)) {
 		cout << "Index is too high";
 	}
-
 	return holder[index];
 }
 
@@ -309,10 +316,11 @@ void String::operator=(const char* str)
 {
 	int size = strlen(str);
 
-	holder = new char[size + 1];
-	strncpy_s(holder, size + 1, str, size);
-
-	cout << holder;
+	holder_1 = new char[size + 1];
+	strncpy_s(holder_1, size + 1, str, size);
+	
+	cout << holder_1;
+	cout << "\n\n\n\n";
 }
 
 // overloaded + operator, combining the original string with a new one, inside a new string
@@ -325,6 +333,7 @@ void String::operator+(const char* str) {
 	string str_new = new_str;
 	str_new.append(str);
 	cout << str_new;
+	cout << "\n\n\n\n";
 }
 
 // overloaded += operator
@@ -349,6 +358,7 @@ bool String::operator<(const char* str) const
 
 	if (int(holder[0]) < int(string[0])) { cout << "True"; return true; }
 	cout << "False";
+	cout << "\n\n\n\n";
 	return false;
 }
 
