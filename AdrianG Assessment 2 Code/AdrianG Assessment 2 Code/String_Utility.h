@@ -30,7 +30,6 @@ public:		// functions
 	void Read();
 	void Write();
 
-	// need to be implemented
 	bool operator == (const char* other);
 	char& operator [] (size_t index);
 
